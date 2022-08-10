@@ -1,0 +1,54 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Emoji, { AllEmojiNames } from './index'
+
+import { EmojisWithUsualSize, EmojisWithBigSize } from './index.stories'
+
+export const Template = (args) => <Emoji {...args} />
+
+<Meta
+  title="Компоненты/Emoji"
+  component={Emoji}
+  parameters={{ controls: { sort: 'requiredFirst' } }}
+/>
+
+# Emoji
+
+Использовать тогда, когда есть необходимость отобразить иконку.
+
+### Примеры использования
+
+Использование иконки с именем "grinning-face"
+
+<Canvas>
+  <Story name="0_0" args={{ name: 'grinning-face' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Все иконки 16x16
+
+<Canvas mdxSource={EmojisWithUsualSize.mdxSource}>
+  <Story name="size=16x16">
+    <EmojisWithUsualSize />
+  </Story>
+</Canvas>
+
+Все иконки 32x32
+
+<Canvas mdxSource={EmojisWithBigSize.mdxSource}>
+  <Story name="size=32x32">
+    <EmojisWithBigSize />
+  </Story>
+</Canvas>
+
+### Cвойства
+
+<ArgsTable component={Emoji} />
+
+### CSS-классы
+
+```css
+.Emoji {
+}
+```

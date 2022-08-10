@@ -1,0 +1,30 @@
+.EmojisWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__Emoji {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: center;
+    width: 100px;
+
+    &:hover {
+      background: #e6e6e6;
+      transition: all ease 0.3s;
+    }
+  }
+
+  &__EmojiSvg {
+    height: 32px;
+    width: 32px;
+  }
+
+  &__Title {
+    font-size: 12px;
+    margin: 5px 0 0;
+    padding: 0;
+  }
+}

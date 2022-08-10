@@ -1,0 +1,23 @@
+import React, { forwardRef, ForwardedRef } from 'react'
+
+export type Props = {}
+
+const WhiteCircle = forwardRef(
+  (props: Props, ref: ForwardedRef<HTMLElement>) => {
+    const { ...otherProps } = props
+
+    return (
+      <figure ref={ref} {...otherProps}>
+        <img
+          alt=""
+          src="data:image/png;base64,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&#x3D;&#x3D;"
+        />
+      </figure>
+    )
+  }
+)
+
+WhiteCircle.displayName = 'WhiteCircle'
+WhiteCircle.defaultProps = {}
+
+export default WhiteCircle
