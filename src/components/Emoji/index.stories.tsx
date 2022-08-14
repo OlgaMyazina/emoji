@@ -1,6 +1,6 @@
-import { useNotifications } from '../../context/notifications'
+import Emoji from './index'
 
-import Emoji, { AllEmojiNames } from './index'
+import { AllEmojiNames } from '../../constants/allName'
 
 import styles from './styles.module.scss'
 
@@ -8,16 +8,11 @@ const Emojis =
   (isBigSize = false) =>
   () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { addNotification } = useNotifications()
-
     const handleCopyIcon = (emoji: string) => () => {
       const writeValue = ` <Emoji name="${emoji}" />`
       navigator.clipboard.writeText(writeValue).then(() => {
-        addNotification({
-          title: 'Copied!',
-          description: writeValue,
-          appearance: 'success',
-        })
+        console.log('Copied', { writeValue })
+        alert('Copied')
       })
     }
 
@@ -31,7 +26,7 @@ const Emojis =
               onClick={handleCopyIcon(emoji)}
             >
               {isBigSize ? (
-                <Emoji name={emoji} style={{ width: 32, height: 32 }} />
+                <Emoji name={emoji} size={32} />
               ) : (
                 <Emoji name={emoji} />
               )}
@@ -52,5 +47,5 @@ EmojisWithUsualSize.mdxSource = AllEmojiNames.map((emoji) => {
 export const EmojisWithBigSize = Emojis(true)
 // @ts-ignore
 EmojisWithBigSize.mdxSource = AllEmojiNames.map((emoji) => {
-  return `<Emoji name="${emoji}" style={{ width: 32, height: 32 }} />\n`
+  return `<Emoji name="${emoji}" size="32" />\n`
 }).join('')
