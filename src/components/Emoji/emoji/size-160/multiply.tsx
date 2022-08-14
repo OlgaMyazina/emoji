@@ -1,21 +1,21 @@
-import React, { forwardRef, ForwardedRef } from 'react'
+import React, {forwardRef, ForwardedRef} from 'react'
 
 export type Props = {}
 
-const Multiply = forwardRef((props: Props, ref: ForwardedRef<HTMLElement>) => {
+const EmojiMultiply = forwardRef((props: Props, ref: ForwardedRef<HTMLElement>) => {
   const { ...otherProps } = props
 
   return (
-    <figure ref={ref} {...otherProps}>
+   <figure ref={ref} {...otherProps}>
       <img
-        alt=""
+        alt="Emoji-multiply"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QQcFSYwmvi8ZQAAAQ5QTFRFAAAAQEBAQUFBQkJCRkZGTExMVFRUWFhYXl5eX19fZGRkb29vcnJydXV1eXl5enp6e3t7fn5+f39/gICAg4ODhISEiYmJioqKj4+PPj4+RkZGiYmJi4uLjIyMlpaWRkZGiYmJioqKi4uLPT09iIiIPj4+gICAhYWFRkZGRkZGgYGBRkZGR0dHeHh4gYGBgoKCfn5+RkZGSEhIdHR0fn5+WlpaYGBgRkZGWFhYXl5eRUVFRkZGcXFxcnJyR0dHcHBwRkZGdXV1RkZGbGxsRkZGa2trbGxsRUVFbGxsT09PVlZWRkZGYGBgRkZGWFhYRkZGR0dHUFBQWVlZRkZGUVFRUlJSRUVFRkZGR0dH////GqAP+QAAAFZ0Uk5TAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGBgYGBgcHBwcICAkJCQoVFRYWFhYWFxsbG0FDQ09SUnJycnJzc3R0np6fn5+goOvr7Ozw8PX19fX8/Pwr1mozAAAAAWJLR0RZmrL0GAAAAixJREFUWMPt1tdWwkAQBmCEKHYgWAE1oCJYwF5AQHqxQiDx/Z9ElhJSZiZZbrzJ3G7Od2b/s7sTj8ctt9z6p9oJXN8nQ9hqKHl/HdhxBAUz9Y/XhAgvionXj3om6Mxp9NWvggRKolT4UvsNJ1LwvDFQ1KEUDVsXw9GhoyqDxrmdtLeZrTKHSdbdiQnmMKma3dwjoUBm4kDS1BlJmYBNPlOHSXGDJManzmh3VE4Gh0mSLqewNHNspI2rlt5hUkzrSYzpHSa17nZXYMj/0DY4+pxm+WhS+3l1CYYWjnOfqlka56TPZ1KfudMFL7I34ShvldjJFCWrkz8S8LSFCCBFw+NzaHIihIP0dHDA2Q8mlcv8Dij1enM4kKQo8zhg4lw5k7ubox87icehJD4Hz8l5PnRPvP2w8u0Xf8zOT3Hfx+t4tg5LXdP5Ubqlwy1eh72Hv+aOfo1vppMyv4favdO9mY6cBOzAU4pw4phjnS2kI+GOik5zIOco5WDTnCcfvpwA5/t7DgmaO29v2JQi8oHmTgSaLfTJBM4hu+/glKJOJpDP+L6DUwrPSTxB5xconW2vwdDyYwdxQKnzsu6HIeGyKVvy0RbNOcnNW+8isjfhoiaD/QA9ybUL6idCL5nfVYNEO0yqyIhjkOQK7XgETYLeeU1ijt0UENKj3cFzZ5K4XEs7+YlgOWFzZ9STXT466R2dX0Pp3aEzzOnmKYV+KqSebmzz0STqS3rVLbfcgusPdAG7VU0CIQ0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjEtMDQtMjhUMjE6Mzg6NDMrMDA6MDBWnC/iAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIxLTA0LTI4VDIxOjM4OjQzKzAwOjAwJ8GXXgAAAABJRU5ErkJggg&#x3D;&#x3D;"
       />
     </figure>
   )
 })
 
-Multiply.displayName = 'Multiply'
-Multiply.defaultProps = {}
+EmojiMultiply.displayName = 'EmojiMultiply'
+EmojiMultiply.defaultProps = {}
 
-export default Multiply
+export default EmojiMultiply

@@ -1,21 +1,21 @@
-import React, { forwardRef, ForwardedRef } from 'react'
+import React, {forwardRef, ForwardedRef} from 'react'
 
 export type Props = {}
 
-const Placard = forwardRef((props: Props, ref: ForwardedRef<HTMLElement>) => {
+const EmojiPlacard = forwardRef((props: Props, ref: ForwardedRef<HTMLElement>) => {
   const { ...otherProps } = props
 
   return (
-    <figure ref={ref} {...otherProps}>
+   <figure ref={ref} {...otherProps}>
       <img
-        alt=""
+        alt="Emoji-placard"
         src="data:image/png;base64,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&#x3D;"
       />
     </figure>
   )
 })
 
-Placard.displayName = 'Placard'
-Placard.defaultProps = {}
+EmojiPlacard.displayName = 'EmojiPlacard'
+EmojiPlacard.defaultProps = {}
 
-export default Placard
+export default EmojiPlacard
