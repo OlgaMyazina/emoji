@@ -6,6 +6,7 @@ import { AllEmojiNames } from '../../constants/allName'
 import Emoji from './index'
 
 test.skip('Emoji without props name -> has Error', () => {
+  // @ts-ignore
   expect(() => render(<Emoji />)).toThrow('text')
 })
 

@@ -35,27 +35,25 @@ const Emoji = forwardRef<HTMLImageElement, Props>((props: Props, ref) => {
     )
   }
 
-  const formatSize = typeof size === 'string' ? parseInt(size, 10) : size
-
-  const sizeFolders = formatSize < 71 ? 'size-72' : 'size-160'
-
-  let emojiName = name
-  const checkName = `${name}-${tone}`
-
-  if (
-    tone &&
-    !name.includes(tone) &&
-    AllEmojiNames.includes(checkName as Name)
-  ) {
-    emojiName = checkName as Name
-  }
-
   const className = cn(styles.Emoji, cls)
 
-  const Emoji = useMemo(
-    () => lazy(() => import(`./emoji/${sizeFolders}/${emojiName}.tsx`)),
-    [name, size, tone]
-  )
+  const Emoji = useMemo(() => {
+    const formatSize = typeof size === 'string' ? parseInt(size, 10) : size
+
+    const sizeFolders = formatSize < 71 ? 'size-72' : 'size-160'
+
+    let emojiName = name
+    const checkName = `${name}-${tone}`
+
+    if (
+      tone &&
+      !name.includes(tone) &&
+      AllEmojiNames.includes(checkName as Name)
+    ) {
+      emojiName = checkName as Name
+    }
+    return lazy(() => import(`./emoji/${sizeFolders}/${emojiName}.tsx`))
+  }, [name, size, tone])
 
   return (
     <Suspense fallback={<span />}>

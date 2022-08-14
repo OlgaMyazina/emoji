@@ -22,8 +22,8 @@
   },
   "scripts": {
     "build": "tsc && webpack",
-    "build-storybook": "build-storybook -s public",
-    "build-storybook-docs": "build-storybook  --docs",
+    "build-storybook": "build-storybook -s public --max_old_space_size=4096",
+    "build-storybook-docs": "build-storybook --docs",
     "check-types": "tsc --noEmit",
     "copy-files": "cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp readme.md dist/readme.md",
     "eslint": "eslint --ignore-path .gitignore .",
@@ -31,7 +31,7 @@
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(html|js|json|jsx|sass|yml)\"",
     "prepare": "husky install",
     "release": "npm run build && npm run copy-files && npm publish dist",
-    "start": "react-scripts start",
+    "start": "react-scripts --max_old_space_size=4096 start",
     "storybook": "start-storybook -p 6006 -s public",
     "stylelint": "stylelint --ignore-path .gitignore \"**/*.+(css|scss)\"",
     "test": "react-scripts test"
