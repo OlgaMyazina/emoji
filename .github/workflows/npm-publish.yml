@@ -29,6 +29,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: echo "//registry.npmjs.org/:_authToken=${{secrets.npm_token}}" > .npmrc
       - run: npm ci
-      - run: npm run release
+      - run: npm run release --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
