@@ -1,7 +1,11 @@
 {
-  "name": "emoji",
-  "version": "0.1.0",
+  "name": "emoji-lib",
+  "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OlgaMyazina/emoji.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -26,8 +30,7 @@
     "lint": "npm run prettier -- --write && npm run eslint -- --fix && npm run stylelint -- --fix",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(html|js|json|jsx|sass|yml)\"",
     "prepare": "husky install",
-    "release": "npm run build && npm run copy-files && npm run copy-themes && npm run remove-prepare-script && npm publish dist",
-    "remove-prepare-script": "node scripts/remove-prepare-script.js",
+    "release": "npm run build && npm run copy-files && npm publish dist",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
     "stylelint": "stylelint --ignore-path .gitignore \"**/*.+(css|scss)\"",
