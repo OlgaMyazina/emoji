@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Emoji from './index'
 
 import { AllEmojiNames } from '../../constants/allName'

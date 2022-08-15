@@ -1,4 +1,4 @@
-import { forwardRef, lazy, Suspense, useMemo } from 'react'
+import React, { forwardRef, lazy, Suspense, useMemo } from 'react'
 import cn from 'classnames'
 
 // Constants
