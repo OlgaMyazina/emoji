@@ -25,7 +25,7 @@
     "build-storybook-docs": "build-storybook --docs",
     "check-types": "tsc --noEmit",
     "copy-styles": "rsync -avum --include='*.scss' --include='*/' --exclude='*' './src/' './dist'",
-    "copy-files": "cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp readme.md dist/readme.md",
+    "copy-files": "cp package.json dist/package.json && cp readme.md dist/readme.md",
     "eject": "react-scripts eject",
     "eslint": "eslint --ignore-path .gitignore .",
     "lint": "npm run prettier -- --write && npm run eslint -- --fix && npm run stylelint -- --fix",
