@@ -14,7 +14,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: echo "//registry.npmjs.org/:_authToken=${{secrets.npm_token}}" > .npmrc
-      - run: npm ci
+      - name: Install dependencies
+        run: |
+          if [ -e package-lock.json ]; then
+           npm ci
+           else
+           npm i
+           fi
       - run: npm run check-types
       - run: npm test
 
@@ -28,7 +34,13 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: echo "//registry.npmjs.org/:_authToken=${{secrets.npm_token}}" > .npmrc
-      - run: npm ci
+      - name: Install dependencies
+        run: |
+          if [ -e package-lock.json ]; then
+           npm ci
+           else
+           npm i
+           fi
       - run: npm run release --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
