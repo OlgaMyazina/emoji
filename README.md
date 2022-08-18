@@ -4,12 +4,14 @@
 ## Install
 
 ```
-npm i -D emoji-lib
+npm i -D emojis-lib
 ```
 
 ## Usage
 
 ```
+import { Emoji } from 'emojis-lib'
+
 <Emoji name="grinning-face-with-smiling-eyes" />
 ```
 
