@@ -97,9 +97,7 @@
     "react": "^18.2.0"
   },
   "files": [
-    "constants",
-    "components",
-    "index.js"
+    "dist"
   ],
   "keywords": [
     "emoji"
