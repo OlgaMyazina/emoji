@@ -29,9 +29,11 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, 'dist'), 'node_modules'],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.scss$/,
         use: [

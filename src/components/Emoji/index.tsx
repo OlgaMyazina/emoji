@@ -52,7 +52,7 @@ const Emoji = forwardRef<HTMLImageElement, Props>((props: Props, ref) => {
     ) {
       emojiName = checkName as Name
     }
-    return lazy(() => import(`./emoji/${sizeFolders}/${emojiName}.tsx`))
+    return lazy(() => import(`./emojis/${sizeFolders}/${emojiName}`))
   }, [name, size, tone])
 
   return (

@@ -5,7 +5,6 @@
     "type": "git",
     "url": "https://github.com/OlgaMyazina/emoji.git"
   },
-  "dependencies": {},
   "scripts": {
     "build": "tsc && npm run copy-styles && webpack",
     "build-storybook": "build-storybook -s public --max_old_space_size=4096",
@@ -21,6 +20,7 @@
     "release": "npm run build && npm run copy-files && npm publish",
     "start": "react-scripts --max_old_space_size=4096 start",
     "storybook": "start-storybook -p 6006 -s public",
+    "storybook-dev": "npm run storybook --max-old-space-size=4096",
     "stylelint": "stylelint --ignore-path .gitignore \"**/*.+(css|scss)\"",
     "test": "react-scripts test"
   },
@@ -76,6 +76,9 @@
     "postcss-scss": "^4.0.4",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
     "sass": "^1.54.3",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
@@ -83,22 +86,17 @@
     "stylelint-config-standard": "^26.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
-    "webpack": "^5.74.0",
     "web-vitals": "^2.1.4",
+    "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
   "peerDependencies": {
     "prop-types": "^15.8.1",
     "react": "^18.2.0"
   },
-  "files": [
-    "dist/*"
-  ],
+  "main": "index.js",
   "keywords": [
     "emoji"
   ]
