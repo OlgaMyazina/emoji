@@ -1,4 +1,4 @@
-import React, { forwardRef, lazy, Suspense, useMemo } from 'react'
+import React, { forwardRef, lazy, Suspense, useEffect, useState } from 'react'
 import cn from 'classnames'
 
 // Constants
@@ -35,9 +35,12 @@ const Emoji = forwardRef<HTMLImageElement, Props>((props: Props, ref) => {
     )
   }
 
-  const className = cn(styles.Emoji, cls)
+  const [Emoji, setEmoji] = useState<React.LazyExoticComponent<any> | null>(
+    null
+  )
 
-  const Emoji = useMemo(() => {
+  useEffect(() => {
+    if (!name) return
     const formatSize = typeof size === 'string' ? parseInt(size, 10) : size
 
     const sizeFolders = formatSize < 71 ? 'size-72' : 'size-160'
@@ -52,8 +55,12 @@ const Emoji = forwardRef<HTMLImageElement, Props>((props: Props, ref) => {
     ) {
       emojiName = checkName as Name
     }
-    return lazy(() => import(`./emojis/${sizeFolders}/${emojiName}`))
-  }, [name, size, tone])
+    setEmoji(lazy(() => import(`./emojis/${sizeFolders}/${emojiName}`)))
+  }, [name, tone, size])
+
+  const className = cn(styles.Emoji, cls)
+
+  if (!Emoji) return null
 
   return (
     <Suspense fallback={<span />}>

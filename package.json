@@ -6,11 +6,11 @@
     "url": "https://github.com/OlgaMyazina/emoji.git"
   },
   "scripts": {
-    "build": "tsc && npm run copy-styles && webpack",
+    "build": "webpack",
     "build-storybook": "build-storybook -s public --max_old_space_size=4096",
     "build-storybook-docs": "build-storybook --docs",
     "check-types": "tsc --noEmit",
-    "copy-styles": "rsync -avum --include='*.scss' --include='*/' --exclude='*' './src/' './dist'",
+    "copy-styles": "rsync -avum --include='*.scss' --include='*/' --exclude='*' './src/' './build'",
     "copy-files": "rsync package.json dist/package.json && rsync README.md dist/README.md",
     "eject": "react-scripts eject",
     "eslint": "eslint --ignore-path .gitignore .",
