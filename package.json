@@ -100,7 +100,7 @@
   "files": [
     "dist/*"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "keywords": [
     "emoji"
   ]
