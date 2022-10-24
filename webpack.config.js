@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: './build/index.js',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
@@ -28,14 +28,13 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    modules: [path.resolve(__dirname, 'dist'), 'node_modules'],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
+        test: /\.d\.ts$/,
+        loader: 'ignore-loader',
       },
       {
         test: /\.scss$/,

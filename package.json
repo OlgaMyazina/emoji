@@ -6,7 +6,7 @@
     "url": "https://github.com/OlgaMyazina/emoji.git"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "tsc && npm run copy-styles && webpack && npm run copy-files",
     "build-storybook": "build-storybook -s public --max_old_space_size=4096",
     "build-storybook-docs": "build-storybook --docs",
     "check-types": "tsc --noEmit",
@@ -71,6 +71,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-storybook": "^0.6.4",
     "husky": "^8.0.1",
+    "ignore-loader": "^0.1.2",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.16",
     "postcss-scss": "^4.0.4",
