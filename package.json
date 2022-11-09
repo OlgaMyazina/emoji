@@ -17,7 +17,7 @@
     "lint": "npm run prettier -- --write && npm run eslint -- --fix && npm run stylelint -- --fix",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(html|js|json|jsx|sass|yml)\"",
     "prepare": "husky install",
-    "release": "npm run build && npm run copy-files && npm publish",
+    "release": "npm run build && npm publish",
     "report": "webpack --profile --json > stats.json; webpack-bundle-analyzer ./stats.json",
     "start": "react-scripts --max_old_space_size=4096 start",
     "storybook": "start-storybook -p 6006 -s public",

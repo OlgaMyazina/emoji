@@ -1,5 +1,3 @@
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 
@@ -66,5 +64,4 @@ module.exports = {
       chunks: 'all',
     },
   },
-  plugins: [new BundleAnalyzerPlugin()],
 }
