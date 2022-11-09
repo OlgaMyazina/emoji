@@ -1,13 +1,16 @@
 const TerserPlugin = require('terser-webpack-plugin')
+
 const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: './build/index.js',
+  entry: {
+    index: './src/index.ts',
+  },
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    globalObject: 'this',
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     library: {
       name: 'emoji-lib',
       type: 'umd',
@@ -28,13 +31,15 @@ module.exports = {
     },
   },
   resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
     modules: [path.resolve(__dirname, 'dist'), 'node_modules'],
   },
   module: {
     rules: [
       {
-        test: /\.d\.ts$/,
-        loader: 'ignore-loader',
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -60,8 +65,13 @@ module.exports = {
         },
       }),
     ],
+    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
+      name: false,
+      cacheGroups: {
+        default: false,
+      },
     },
   },
 }
