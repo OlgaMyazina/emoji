@@ -6,7 +6,7 @@
     "url": "https://github.com/OlgaMyazina/emoji.git"
   },
   "scripts": {
-    "build": "tsc && npm run copy-styles && webpack && npm run copy-files",
+    "build": "webpack",
     "build-storybook": "build-storybook -s public --max_old_space_size=4096",
     "build-storybook-docs": "build-storybook --docs",
     "check-types": "tsc --noEmit",
